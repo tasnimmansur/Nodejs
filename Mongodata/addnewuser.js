@@ -12,7 +12,7 @@ router.get("/",function(req,res){
 });
 
 //route() will allow you to use same path for different HTTP operation.
-//So if you have same URL but with different HTTP OP such as POST,GET etc
+//So if you have same URL but with different HTTP such as POST,GET etc
 //Then use route() to remove redundant code.
 
 router.route("/users")

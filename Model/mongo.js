@@ -1,5 +1,21 @@
 var mongoose    =   require("mongoose");
-mongoose.connect('mongodb://localhost:27017/mydb');
+var http = require ('http');
+
+var uristring =
+    process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/mydb';
+
+//mongoose.connect('mongodb://localhost:27017/mydb');
+
+mongoose.connect(uristring, function (err, res) {
+    if (err) {
+        console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+    } else {
+        console.log ('Succeeded connected to: ' + uristring);
+    }
+});
+
 // create instance of Schema
 var mongoSchema =   mongoose.Schema;
 // create User schema
@@ -9,3 +25,5 @@ var userSchema  = {
 };
 // create model(table)
 module.exports = mongoose.model('userLogin',userSchema);
+
+
