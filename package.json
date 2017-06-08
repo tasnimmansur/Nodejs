@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "casual": "^1.5.12",
     "connect": "^3.6.2",
     "express": "^4.15.3",
     "formidable": "^1.1.1",
@@ -17,7 +18,9 @@
   },
   "description": "",
   "main": "server.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tasnimmansur/nodejs.git"
