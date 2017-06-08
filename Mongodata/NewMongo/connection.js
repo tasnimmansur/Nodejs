@@ -9,6 +9,12 @@ MongoClient.connect(url, function(err, db) {
     console.log("Connected correctly to server");
 
     insertDocuments(db, function() {
-        db.close();
+        updateDocument(db, function() {
+            deleteDocument(db, function() {
+                findDocuments(db, function() {
+                    db.close();
+                });
+            });
+        });
     });
 });
