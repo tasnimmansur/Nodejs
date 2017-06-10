@@ -20,7 +20,6 @@ app.get('/images', function(req, res) {
     routes.getImages(function(err, genres) {
         if (err) {
             throw err;
-
         }
         res.json(genres);
 
