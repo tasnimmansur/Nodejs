@@ -1,7 +1,7 @@
 var express     =   require("express");
 var app         =   express();
 var bodyParser  =   require("body-parser");
-var mongoOp     =   require("../model/mongo");
+var mongoOp     =   require("../Model/mongo");
 var router      =   express.Router();
 
 app.use(bodyParser.json());
