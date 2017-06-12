@@ -1,5 +1,5 @@
 var datetime = require('node-datetime');
-/*var past = '2017-06-06 00:00:00';
+var past = '2017-06-06 00:00:00';
 var pastDateTime = datetime.create(past);
 
 
@@ -9,8 +9,8 @@ setTimeout(function () {
     console.log(pastNow);
     console.log(new Date(1420038010000));
 }, 1000);
-*/
-function addZero(x, n) {
+
+/*function addZero(x, n) {
     while (x.toString().length < n) {
         x = "0" + x;
     }
@@ -25,5 +25,5 @@ function myFunction() {
     var s = addZero(d.getSeconds(), 2);
     var ms = addZero(d.getMilliseconds(), 3);
     x.innerHTML = h + ":" + m + ":" + s + ":" + ms;
-}
+}*/
 
