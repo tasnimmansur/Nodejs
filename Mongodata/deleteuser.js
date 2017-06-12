@@ -20,12 +20,12 @@ router.route("/users/:id")
     .put(function(req,res){})
     .delete(function(req,res){
         var response = {};
-        // find the data
+
         mongoOp.findById(req.params.id,function(err,data){
             if(err) {
                 response = {"error" : true,"message" : "Error fetching data"};
             } else {
-                // data exists, remove it.
+
                 mongoOp.remove({_id : req.params.id},function(err){
                     if(err) {
                         response = {"error" : true,"message" : "Error deleting data"};
