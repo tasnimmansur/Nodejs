@@ -8,10 +8,9 @@ autoIncrement.initialize(connection);
 
 //mongoose.connect('mongodb://localhost/auto_increment');
 
-
 connection.on('error',console.error.bind(console,"Connection error"));
 connection.once('open',function callback() {
-    console.log("Connection established via :" + connection);
+    console.log("Connection established :" + connection);
 });
 
 /*app.get('/', function(req, res){
@@ -31,6 +30,13 @@ connection.once('open',function callback() {
     });
 });
 */
+
+app.set('port',(process.env.PORT || 3000));
+app.listen(app.get('port'), function () {
+    console.log('Server has started on Port:'+app.get('port'));
+});
+
+
 app.set('port', (process.env.PORT || 3000));
 app.listen(app.get('port'), function(){
     console.log('Server has started on Port: '+app.get('port'));
