@@ -1,12 +1,11 @@
 var mongoose    =   require("mongoose");
+var Schema   = mongoose.Schema;
 var http = require ('http');
 
 var uristring =
     process.env.MONGOLAB_URI ||
     process.env.MONGOHQ_URL ||
     'mongodb://localhost/mydb';
-
-//mongoose.connect('mongodb://localhost:27017/mydb');
 
 mongoose.connect(uristring, function (err, res) {
     if (err) {
@@ -16,14 +15,12 @@ mongoose.connect(uristring, function (err, res) {
     }
 });
 
-// create instance of Schema
-var mongoSchema =   mongoose.Schema;
-// create User schema
-var userSchema  = {
+var userSchema  = new Schema({
     "userEmail" : String,
     "userPassword" : String
-};
+});
 // create model(table)
 module.exports = mongoose.model('userLogin',userSchema);
+
 
 

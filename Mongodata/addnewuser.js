@@ -17,14 +17,13 @@ router.route("/users")
         var db = new mongoOp();
         var response = {};
 
-        db.userEmail = req.body.email;
-
+        db.userEmail = req.body.email;        
+        
         db.userPassword =  require('crypto')
             .createHash('sha1')
             .update(req.body.password)
             .digest('base64');
         db.save(function(err){
-
             if(err) {
                 response = {"error" : true,"message" : "Error adding data"};
             } else {
